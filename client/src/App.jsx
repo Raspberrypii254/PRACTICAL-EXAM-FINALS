@@ -10,7 +10,7 @@ function App() {
   const fetchStudents = () => {
     
     axios
-      .get("http://localhost:5000/students")
+      .get("https://practical-exam-finals-five.vercel.app/students")
       .then((response) => {
         setStudents(response.data);
       });
@@ -24,7 +24,7 @@ function App() {
     e.preventDefault();
     if (editingId) {
       axios
-        .put(`http://localhost:5000/students/${editingId}`, { name, course, age })
+        .put(`https://practical-exam-finals-five.vercel.app/students/${editingId}`, { name, course, age })
         .then(() => {
           fetchStudents();
           resetForm();
@@ -32,7 +32,7 @@ function App() {
 
     } else {
       axios
-        .post("http://localhost:5000/students", { name, course, age })
+        .post("https://practical-exam-finals-five.vercel.app/students", { name, course, age })
         .then(() => {
           fetchStudents();
           resetForm();
@@ -49,7 +49,7 @@ function App() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/students/${id}`)
+      .delete(`https://practical-exam-finals-five.vercel.app/students/${id}`)
       .then(() => {
         fetchStudents();
       });
